@@ -3,15 +3,19 @@ package hello.hellospring.sevice;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class MemberService {
 
+    @Autowired
     private MemberRepository memberRepository = new MemoryMemberRepository();
 
     public MemberService(MemberRepository memberRepository) {
+        //객체의 밖에서 객체를 넣어주는(주입) 방식이 의존성 주입
         //new하지 않고 외부에서 넣어줌. => DI(Dependency Injection)
         this.memberRepository = memberRepository;
     }

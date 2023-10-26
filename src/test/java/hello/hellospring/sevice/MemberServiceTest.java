@@ -11,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
+    //MemberService memberService = new MemberService();
+    //MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    //new를통해 직접 객체를 생성하면 각각의 클래스에 의존하게 된다. 다른 객체를 사용하고싶어도 코드를 수정하기전까진 불가능.
+    //이러한 의존성을 없애기위해 의존성을 주입시키는 방식을 사용함.
+
     MemberService memberService;
 
     MemoryMemberRepository memberRepository;
