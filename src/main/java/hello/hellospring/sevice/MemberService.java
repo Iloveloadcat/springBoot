@@ -9,7 +9,12 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private MemberRepository memberRepository = new MemoryMemberRepository();
+
+    public MemberService(MemberRepository memberRepository) {
+        //new하지 않고 외부에서 넣어줌. => DI(Dependency Injection)
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원가입
