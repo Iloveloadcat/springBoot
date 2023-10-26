@@ -64,6 +64,7 @@ class MemberServiceTest {
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
         //"() -> memberService.join(member2)" 이러한 로직을 실행하면 llegalStateException 예외가 발생해야한다라는 걸 명시
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");
+        //then
 /*
 
         try {
@@ -73,7 +74,7 @@ class MemberServiceTest {
             assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");
         }
 */
-        //then
+
     }
 
     @Test
